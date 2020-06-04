@@ -90,25 +90,52 @@ Esegui questo programma in due versioni, con il for e con il while. */
 
 
 
-// JSnack #4
-/* Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero. */
+// // JSnack #4
+// /* Chiedi un numero di 4 cifre all’utente e calcola la somma di tutte le cifre che compongono il numero. */
+//
+// // RICHIESTA INPUT UTENTE
+// // Richiesta numero Utente
+// var numeroUtente = prompt('Inserisci un numero di 4 cifre');
+// console.log(numeroUtente);
+//
+// // Divido singole cifre del numero UTENTE
+// while (!(numeroUtente >= 1000 && numeroUtente <= 9999) ) {
+//   numeroUtente = parseInt(prompt('Errore! Inserisci un numero di 4 cifre'))
+// }
+//
+// var numeroUtenteString = numeroUtente.toString();
+// var numeroUtenteArray = numeroUtenteString.split("");
+// console.log(numeroUtenteArray);
+//
+// var sum = 0;
+// for (var i = 0; i < numeroUtenteArray.length; i++) {
+//   sum = sum + parseInt(numeroUtenteArray[i]);
+// }
+// console.log(sum);
 
-// RICHIESTA INPUT UTENTE
-// Richiesta numero Utente
-var numeroUtente = prompt('Inserisci un numero di 4 cifre');
-console.log(numeroUtente);
 
-// Divido singole cifre del numero UTENTE
-while (!(numeroUtente >= 1000 && numeroUtente <= 9999) ) {
-  numeroUtente = parseInt(prompt('Errore! Inserisci un numero di 4 cifre'))
+
+
+// JSnack #5
+/* Fai inserire un numero, che chiameremo N, all’utente.
+  Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+  Ogni volta che ne crei uno, stampalo a schermo. */
+
+// INPUT
+// Richiesta input utente (n° utente = n° array da stampare)
+var userNumber = parseInt(prompt('Inserisci un numero'));
+// console.log(userNumber);
+
+
+// FOR Loop
+//Genera tot. n° array contenente 10 numeri da 1 a 100
+for (var i = 0; i < userNumber; i++) {
+  var newArray = [];
+
+  // Creo array contenente 10 numeri casuali
+  for (var j = 0; j < 10; j++) {
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    newArray.push(randomNumber);
+  }
+  console.log(newArray);
 }
-
-var numeroUtenteString = numeroUtente.toString();
-var numeroUtenteArray = numeroUtenteString.split("");
-console.log(numeroUtenteArray);
-
-var sum = 0;
-for (var i = 0; i < numeroUtenteArray.length; i++) {
-  sum = sum + parseInt(numeroUtenteArray[i]);
-}
-console.log(sum);
