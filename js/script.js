@@ -194,24 +194,24 @@ Esegui questo programma in due versioni, con il for e con il while. */
 
 
 
-// ***************************** JSnack #7 - v.1 *****************************
-/* Crea due array che hanno un numero di elementi diversi.
-Aggiungi elementi casuali all’array che ha meno elementi, fino a quando ne avrà tanti quanti l’altro. */
-
-// INPUT
-// Creo array con n° elementi (array contenente più elementi)
-var primoArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(primoArray);
-
-// Creo array con n° elementi (array contenente meno elementi)
-var secondoArray = [11, 12, 13, 14, 15];
-console.log(secondoArray);
-
-var lunghezzaPrimoArray = primoArray.length;
-var lunghezzaSecondoArray = secondoArray.length;
-
-
-// WHILE Loop
+// // ***************************** JSnack #7 - v.1 *****************************
+// /* Crea due array che hanno un numero di elementi diversi.
+// Aggiungi elementi casuali all’array che ha meno elementi, fino a quando ne avrà tanti quanti l’altro. */
+//
+// // INPUT
+// // Creo array con n° elementi (array contenente più elementi)
+// var primoArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(primoArray);
+//
+// // Creo array con n° elementi (array contenente meno elementi)
+// var secondoArray = [11, 12, 13, 14, 15];
+// console.log(secondoArray);
+//
+// var lunghezzaPrimoArray = primoArray.length;
+// var lunghezzaSecondoArray = secondoArray.length;
+//
+//
+// // WHILE Loop
 
 
 
@@ -294,3 +294,29 @@ var lunghezzaSecondoArray = secondoArray.length;
 //     console.log(numeroDispari);
 //   }
 // }
+
+
+
+
+
+// ****************************** JSnack #9 ******************************
+/*
+L’utente ha a disposizione un input in cui inserire un nome di un giocatore e una select tramite la quale puoi scegliere se il giocatore va inserito tra i titolari o tra le riserve.
+Quando si clicca sul button “Aggiungi” il nome viene aggiunto nella lista dei titolari se l’utente ha scelto titolari, altrimenti tra le riserve.
+*/
+
+// Evento al click di button “Add Player”
+$('#btn-addPlayer').click(
+  function() {
+    var nomePlayer = $('#nome-player').val();
+    var ruoloPlayer = $('#ruolo-player').val();
+     // Se utente sceglie titolari, il nome del giocatore viene aggiunto nella lista titolari
+     if (ruoloPlayer === 'titolari') {
+       $('#lista-titolari ul').append('<li>' + nomePlayer + '</li>');
+     }
+     else {
+       // altrimenti nella lista riserve
+       $('#lista-riserve ul').append('<li>' + nomePlayer + '</li>');
+     }
+  }
+);
